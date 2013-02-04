@@ -9,3 +9,8 @@ Pages:
 
 - Login
 - Admin Dashboard
+
+
+Preview:
+
+![Preview](https://f.cloud.github.com/assets/195199/122541/a189b098-6e6b-11e2-904d-57277458ae49.png)
