@@ -1,7 +1,4 @@
 $(function() {
-	// Easy pie charts
-    $('.chart').easyPieChart({animate: 1000});
-
     // Side Bar Toggle
     $('.hide-sidebar').click(function() {
 	  $('#sidebar').hide('fast', function() {
