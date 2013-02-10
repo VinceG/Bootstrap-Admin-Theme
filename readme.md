@@ -8,8 +8,13 @@ This is still a work in progress.
 Pages:
 
 - Login
-- Admin Dashboard
+- Admin Dashboard (Tables, Statistics, Chart, Media Gallery)
+- Full Calendar
+- Statistics (Multiple examples of Pie, Bar, Line charts)
 
+Demo:
+
+http://vinceg.github.com/Bootstrap-Admin-Theme
 
 Preview:
 
