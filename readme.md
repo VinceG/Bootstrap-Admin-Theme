@@ -10,6 +10,9 @@ Pages:
 - Login
 - Admin Dashboard
 
+Demo:
+
+http://vinceg.github.com/Bootstrap-Admin-Theme
 
 Preview:
 
