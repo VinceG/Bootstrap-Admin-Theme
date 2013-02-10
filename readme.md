@@ -12,6 +12,7 @@ Pages:
 - Full Calendar
 - Statistics (Multiple examples of Pie, Bar, Line charts)
 - Buttons & Icons
+- UI & Interface Elements (Modals, Popovers, Tooltips, Alerts, Notifications, Labels, Progress Bars)
 
 Demo:
 
