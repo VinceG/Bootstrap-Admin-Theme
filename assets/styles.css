@@ -37,7 +37,7 @@ body {
 }
 
 /** 2 level sub menu **/
-.dropdown-menu .sub-menu {
+.dropdown-menu-with-subs .sub-menu {
   left: 100%;
   position: absolute;
   top: 0;
@@ -45,7 +45,7 @@ body {
   margin-top: -1px;
 }
 
-.dropdown-menu li:hover .sub-menu {
+.dropdown-menu-with-subs li:hover .sub-menu {
   visibility: visible;
   display: block;
 }
@@ -177,4 +177,19 @@ body {
   position: absolute;
   top: auto;
   bottom: 270px;
+}
+
+/* Icons
+------------------------- */
+.the-icons {
+  margin-left: 0;
+  list-style: none;
+}
+.the-icons li {
+  float: left;
+  width: 25%;
+  line-height: 25px;
+}
+.the-icons i:hover {
+  background-color: rgba(255,0,0,.25);
 }
