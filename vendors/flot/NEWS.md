@@ -1,4 +1,4 @@
-## Flot 0.8 alpha ##
+## Flot 0.8.0-beta ##
 
 ### API changes ###
 
@@ -17,12 +17,32 @@ standard strftime specifiers, plus one nonstandard specifier for quarters.
 Additionally, if a strftime function is found in the Date object's prototype,
 it will be used instead of the built-in formatter.
 
-Axis labels are now drawn with canvas text with some parsing to support
-newlines. This solves various issues but also means that they no longer
-support HTML markup, can be accessed as DOM elements or styled directly with
-CSS. Some older browsers lack this function of the canvas API (this doesn't
-affect IE); if this is a problem, either continue using an older version of
-Flot or try an emulation helper such as canvas-text or Flashcanvas.
+Axis tick labels now use the class 'flot-tick-label' instead of 'tickLabel'.
+The text containers  for each axis now use the classes 'flot-[x|y]-axis' and
+'flot-[x|y]#-axis' instead of '[x|y]Axis' and '[x|y]#Axis'. For compatibility
+with Flot 0.7 and earlier text will continue to use the old classes as well,
+but they are considered deprecated and will be removed in a future version.
+
+In previous versions the axis 'color' option was used to set the color of tick
+marks and their label text. It now controls the color of the axis line, which
+previously could not be changed separately, and continues to act as a default
+for the tick-mark color.  The color of tick label text is now set either by
+overriding the 'flot-tick-label' CSS rule or via the axis 'font' option.
+
+A new plugin, jquery.flot.canvas.js, allows axis tick labels to be rendered
+directly to the canvas, rather than using HTML elements. This feature can be
+toggled with a simple option, making it easy to create interactive plots in the
+browser using HTML, then re-render them to canvas for export as an image.
+
+The plugin tries to remain as faithful as possible to the original HTML render,
+and goes so far as to automatically extract styles from CSS, to avoid having to
+provide a separate set of styles when rendering to canvas. Due to limitations
+of the canvas text API, the plugin cannot reproduce certain features, including
+HTML markup embedded in labels, and advanced text styles such as 'em' units.
+
+The plugin requires support for canvas text, which may not be present in some
+older browsers, even if they support the canvas tag itself. To use the plugin
+with these browsers try using a shim such as canvas-text or FlashCanvas.
 
 The base and overlay canvas are now using the CSS classes "flot-base" and
 "flot-overlay" to prevent accidental clashes (issue 540).
@@ -43,7 +63,8 @@ The base and overlay canvas are now using the CSS classes "flot-base" and
  - Display time series in different time zones. (patch by Knut Forkalsrud,
    issue 141)
 
- - Canvas text support for labels. (sponsored by YCharts.com)
+ - Added a canvas plugin to enable rendering axis tick labels to the canvas.
+   (sponsored by YCharts.com, implementation by Ole Laursen and David Schnur)
 
  - Support for setting the interval between redraws of the overlay canvas with
    redrawOverlayInterval. (suggested in issue 185)
@@ -107,6 +128,13 @@ The base and overlay canvas are now using the CSS classes "flot-base" and
 
  - The plot function is now also a jQuery chainable property.
    (patch by David Schnur, issues #734 and #816, pull request #953)
+
+ - When only a single pie slice is beneath the combine threshold it is no longer
+   replaced by an 'other' slice. (suggested by Devin Bayer, issue #638)
+
+ - Added lineJoin and minSize options to the selection plugin to control the
+   corner style and minimum size of the selection, respectively.
+   (patch by Ruth Linehan, pull request #963)
 
 ### Bug fixes ###
 
@@ -198,6 +226,9 @@ The base and overlay canvas are now using the CSS classes "flot-base" and
 
  - Avoid rounding errors in the threshold plugin.
    (reported by jerikojerk, issue #895)
+
+ - Fixed an error when using the navigate plugin with jQuery 1.9.x or later.
+   (reported by Paolo Valleri, issue #964)
 
 
 ## Flot 0.7 ##

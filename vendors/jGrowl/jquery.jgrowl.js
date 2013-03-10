@@ -1,11 +1,11 @@
 /**
- * jGrowl 1.2.9
+ * jGrowl 1.2.10
  *
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
  * Written by Stan Lemon <stosh1985@gmail.com>
- * Last updated: 2013.01.18
+ * Last updated: 2013.02.14
  *
  * jGrowl is a jQuery plugin implementing unobtrusive userland notifications.  These 
  * notifications function similarly to the Growl Framework available for
@@ -13,6 +13,9 @@
  *
  * To Do:
  * - Move library settings to containers and allow them to be changed per container
+ *
+ * Changes in 1.2.10
+ * - Fix beforeClose to be called in click event
  *
  * Changes in 1.2.9
  * - Fixed BC break in jQuery 2.0 beta
@@ -115,7 +118,7 @@
 (function($) {
 	/** Compatibility holdover for 1.9 to check IE6 **/
 	var $ie6 = (function(){
-		return false === $.support.boxModel && $.support.objectAll && $support.leadingWhitespace;
+		return false === $.support.boxModel && $.support.objectAll && $.support.leadingWhitespace;
 	})();
 
 	/** jGrowl Wrapper - Establish a base jGrowl Container for compatibility with older releases. **/
@@ -219,15 +222,15 @@
 			// Support for jQuery theme-states, if this is not used it displays a widget header
 			o.themeState = (o.themeState == '') ? '' : 'ui-state-' + o.themeState;
 
-			var notification = $(
-				'<div class="jGrowl-notification ' + o.themeState + ' ui-corner-all' + 
-				((o.group != undefined && o.group != '') ? ' ' + o.group : '') + '">' +
-				'<div class="jGrowl-close">' + o.closeTemplate + '</div>' +
-				'<div class="jGrowl-header">' + o.header + '</div>' +
-				'<div class="jGrowl-message">' + message + '</div></div>'
-			).data("jGrowl", o).addClass(o.theme).children('div.jGrowl-close').bind("click.jGrowl", function() {
-				$(this).parent().trigger('jGrowl.close');
-			}).parent();
+			var notification = $('<div/>')
+		        .addClass('jGrowl-notification ' + o.themeState + ' ui-corner-all' + ((o.group != undefined && o.group != '') ? ' ' + o.group : ''))
+		        .append($('<div/>').addClass('jGrowl-close').html(o.closeTemplate))
+		        .append($('<div/>').addClass('jGrowl-header').html(o.header))
+		        .append($('<div/>').addClass('jGrowl-message').html(message))
+		        .data("jGrowl", o).addClass(o.theme).children('div.jGrowl-close').bind("click.jGrowl", function() {
+		        	$(this).parent().trigger('jGrowl.beforeClose');		        
+		        })
+		        .parent();
 
 
 			/** Notification Actions **/
