@@ -1,28 +1,3 @@
-Bootstrap Admin Theme
-=====================
-
-A generic admin theme built with Bootstrap free for both personal and commercial use. 
-
-This is still a work in progress.
-
-Pages:
-
-- Login
-- Admin Dashboard (Tables, Statistics, Chart, Media Gallery)
-- Full Calendar (Viewing calendar, adding events, dragging events)
-- Statistics & Charts (Multiple examples of Pie, Bar, Line charts using Morris.js, knob.js, jquery flot, easypiechart)
-- Buttons & Icons
-- Forms & Wizard
-- UI & Interface Elements (Modals, Popovers, Tooltips, Alerts, Notifications, Labels, Progress Bars)
-
-Demo:
-
-http://vinceg.github.com/Bootstrap-Admin-Theme
-
-<p>&copy; <a href='http://vadimg.com' target="_blank">Vadim Vincent Gabriel</a> <a href='https://twitter.com/gabrielva' target='_blank'>Follow @gabrielva</a> 2012</p>
-
-License
-===============
 The MIT License (MIT)
 
 Copyright (c) 2013 - Vincent Gabriel
