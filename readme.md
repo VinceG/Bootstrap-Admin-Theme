@@ -9,8 +9,8 @@ Pages:
 
 - Login
 - Admin Dashboard (Tables, Statistics, Chart, Media Gallery)
-- Full Calendar
-- Statistics (Multiple examples of Pie, Bar, Line charts)
+- Full Calendar (Viewing calendar, adding events, dragging events)
+- Statistics & Charts (Multiple examples of Pie, Bar, Line charts using Morris.js, knob.js, jquery flot, easypiechart)
 - Buttons & Icons
 - UI & Interface Elements (Modals, Popovers, Tooltips, Alerts, Notifications, Labels, Progress Bars)
 

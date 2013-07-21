@@ -137,7 +137,7 @@
                             <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
                         </li>
                         <li class="active">
-                            <a href="stats.html"><i class="icon-chevron-right"></i> Statistics</a>
+                            <a href="stats.html"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
                             <a href="buttons.html"><i class="icon-chevron-right"></i> Buttons & Icons</a>
@@ -173,6 +173,97 @@
                 </div>
                 <!--/span-->
                 <div class="span9" id="content">
+                      <!-- morris stacked chart -->
+                    <div class="row-fluid">
+                        <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Morris.js stacked</div>
+                                <div class="pull-right"><span class="badge badge-warning">View More</span>
+
+                                </div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                    <div id="hero-area" style="height: 250px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
+
+                    <!-- morris graph chart -->
+                    <div class="row-fluid section">
+                         <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Morris.js <small>Monthly growth</small></div>
+                                <div class="pull-right"><span class="badge badge-warning">View More</span>
+
+                                </div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                    <div id="hero-graph" style="height: 230px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
+
+                    <!-- morris bar & donut charts -->
+                    <div class="row-fluid section">
+                         <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Morris.js</div>
+                                <div class="pull-right"><span class="badge badge-warning">View More</span>
+
+                                </div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span6 chart">
+                                    <h5>Devices sold</h5>
+                                    <div id="hero-bar" style="height: 250px;"></div>
+                                </div>
+                                <div class="span5 chart">
+                                    <h5>Month traffic</h5>
+                                    <div id="hero-donut" style="height: 250px;"></div>    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
+
+                    <!-- jQuery knobs -->
+                    <div class="row-fluid section">
+                         <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">jQuery Knob</div>
+                                <div class="pull-right"><span class="badge badge-warning">View More</span>
+
+                                </div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span3">     
+                                    <input type="text" value="50" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#30a1ec" data-bgColor="#d4ecfd" data-width="140">
+                                </div>
+                                <div class="span3">
+                                    <input type="text" value="75" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#8ac368" data-bgColor="#c4e9aa" data-width="140">
+                                </div>
+                                <div class="span3">
+                                    <input type="text" value="35" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#5ba0a3" data-bgColor="#cef3f5" data-width="140">
+                                </div>
+                                <div class="span3">
+                                    <input type="text" value="85" class="knob second" data-thickness=".3" data-inputColor="#333" data-fgColor="#b85e80" data-bgColor="#f8d2e0" data-width="140">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
+
+
                     <div class="row-fluid">
                         <!-- block -->
                         <div class="block">
@@ -245,12 +336,21 @@
             </footer>
         </div>
         <!--/.fluid-container-->
+        <link rel="stylesheet" href="vendors/morris/morris.css">
+
+
         <script src="vendors/jquery-1.9.1.min.js"></script>
+        <script src="vendors/jquery.knob.js"></script>
+        <script src="vendors/raphael-min.js"></script>
+        <script src="vendors/morris/morris.min.js"></script>
+
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="vendors/flot/jquery.flot.js"></script>
         <script src="vendors/flot/jquery.flot.categories.js"></script>
         <script src="vendors/flot/jquery.flot.pie.js"></script>
         <script src="vendors/flot/jquery.flot.time.js"></script>
+        <script src="vendors/flot/jquery.flot.stack.js"></script>
+        <script src="vendors/flot/jquery.flot.resize.js"></script>
 
         <script src="assets/scripts.js"></script>
         <script>
@@ -355,6 +455,91 @@
         doPlot("right");
 
         });
+
+        // Morris Bar Chart
+        Morris.Bar({
+            element: 'hero-bar',
+            data: [
+                {device: '1', sells: 136},
+                {device: '3G', sells: 1037},
+                {device: '3GS', sells: 275},
+                {device: '4', sells: 380},
+                {device: '4S', sells: 655},
+                {device: '5', sells: 1571}
+            ],
+            xkey: 'device',
+            ykeys: ['sells'],
+            labels: ['Sells'],
+            barRatio: 0.4,
+            xLabelMargin: 10,
+            hideHover: 'auto',
+            barColors: ["#3d88ba"]
+        });
+
+
+        // Morris Donut Chart
+        Morris.Donut({
+            element: 'hero-donut',
+            data: [
+                {label: 'Direct', value: 25 },
+                {label: 'Referrals', value: 40 },
+                {label: 'Search engines', value: 25 },
+                {label: 'Unique visitors', value: 10 }
+            ],
+            colors: ["#30a1ec", "#76bdee", "#c4dafe"],
+            formatter: function (y) { return y + "%" }
+        });
+
+
+        // Morris Line Chart
+        var tax_data = [
+            {"period": "2013-04", "visits": 2407, "signups": 660},
+            {"period": "2013-03", "visits": 3351, "signups": 729},
+            {"period": "2013-02", "visits": 2469, "signups": 1318},
+            {"period": "2013-01", "visits": 2246, "signups": 461},
+            {"period": "2012-12", "visits": 3171, "signups": 1676},
+            {"period": "2012-11", "visits": 2155, "signups": 681},
+            {"period": "2012-10", "visits": 1226, "signups": 620},
+            {"period": "2012-09", "visits": 2245, "signups": 500}
+        ];
+        Morris.Line({
+            element: 'hero-graph',
+            data: tax_data,
+            xkey: 'period',
+            xLabels: "month",
+            ykeys: ['visits', 'signups'],
+            labels: ['Visits', 'User signups']
+        });
+
+
+
+        // Morris Area Chart
+        Morris.Area({
+            element: 'hero-area',
+            data: [
+                {period: '2010 Q1', iphone: 2666, ipad: null, itouch: 2647},
+                {period: '2010 Q2', iphone: 2778, ipad: 2294, itouch: 2441},
+                {period: '2010 Q3', iphone: 4912, ipad: 1969, itouch: 2501},
+                {period: '2010 Q4', iphone: 3767, ipad: 3597, itouch: 5689},
+                {period: '2011 Q1', iphone: 6810, ipad: 1914, itouch: 2293},
+                {period: '2011 Q2', iphone: 5670, ipad: 4293, itouch: 1881},
+                {period: '2011 Q3', iphone: 4820, ipad: 3795, itouch: 1588},
+                {period: '2011 Q4', iphone: 15073, ipad: 5967, itouch: 5175},
+                {period: '2012 Q1', iphone: 10687, ipad: 4460, itouch: 2028},
+                {period: '2012 Q2', iphone: 8432, ipad: 5713, itouch: 1791}
+            ],
+            xkey: 'period',
+            ykeys: ['iphone', 'ipad', 'itouch'],
+            labels: ['iPhone', 'iPad', 'iPod Touch'],
+            lineWidth: 2,
+            hideHover: 'auto',
+            lineColors: ["#81d5d9", "#a6e182", "#67bdf8"]
+          });
+
+
+
+        // Build jQuery Knobs
+        $(".knob").knob();
 
         function labelFormatter(label, series) {
             return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
