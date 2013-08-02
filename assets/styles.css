@@ -108,9 +108,13 @@ body {
 	padding-top: 10px;
 }
 
+.easyPieChart {
+	margin: 0px auto;
+}
+
 .chart-bottom-heading {
 	margin-top: 5px;
-	margin-left: 15%;
+	text-align: center;
 }
 
 /** Side Bar **/
