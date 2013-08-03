@@ -1,4 +1,4 @@
-Bootstrap Admin Theme
+Bootstrap Admin Theme [![Build Status](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme.png?branch=master)](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme)
 =====================
 
 A generic admin theme built with Bootstrap free for both personal and commercial use. 
