@@ -14,6 +14,7 @@ Pages:
 - Buttons & Icons
 - WYSIWYG & HTML 5 Editors
 - Forms & Wizard
+- Tables & Bootstrap dataTables
 - UI & Interface Elements (Modals, Popovers, Tooltips, Alerts, Notifications, Labels, Progress Bars)
 
 Demo:
