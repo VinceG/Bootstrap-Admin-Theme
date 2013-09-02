@@ -12,8 +12,8 @@ Pages:
 - Full Calendar (Viewing calendar, adding events, dragging events)
 - Statistics & Charts (Multiple examples of Pie, Bar, Line charts using Morris.js, knob.js, jquery flot, easypiechart)
 - Buttons & Icons
-- Forms & Wizard
 - WYSIWYG & HTML 5 Editors
+- Forms & Wizard
 - UI & Interface Elements (Modals, Popovers, Tooltips, Alerts, Notifications, Labels, Progress Bars)
 
 Demo:
