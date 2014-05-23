@@ -1,8 +1,8 @@
 Bootstrap Admin Theme [![Build Status](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme.png?branch=master)](https://travis-ci.org/VinceG/Bootstrap-Admin-Theme)
 =====================
 
-<a href='https://github.com/VinceG/Bootstrap-Admin-Theme-3' target="_blank">Admin Theme for Bootstrap 3.x</a>
-===================
+##### If you are looking for the Admin theme designed for Bootstrap 3 please <a href='https://github.com/VinceG/Bootstrap-Admin-Theme-3' target="_blank">Click Here</a>
+
 
 A generic admin theme built with Bootstrap free for both personal and commercial use. 
 
